@@ -46,8 +46,7 @@
   include: auth_initialization.yml
   when: ( mongodb_security_authorization == 'enabled'
           and (not mongodb_replication_replset
-          or mongodb_replication_replset == '')
-          and mongodb_user_admin_check.rc != 0 )
+          or mongodb_replication_replset == '') )
   tags: [mongodb]
 
 - name: create normal users with replicaset
